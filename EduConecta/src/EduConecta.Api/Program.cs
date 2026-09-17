@@ -17,6 +17,7 @@ builder.Services.AddScoped<EstudianteService>();
 builder.Services.AddScoped<SesionService>();
 
 var app = builder.Build();
+app.UseMiddleware<EduConecta.Api.Middleware.ManejoDeErroresMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
