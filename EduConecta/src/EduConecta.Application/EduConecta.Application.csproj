@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EduConecta.Domain\EduConecta.Domain.csproj" />
+    <ProjectReference Include="..\EduConecta.Infrastructure\EduConecta.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
