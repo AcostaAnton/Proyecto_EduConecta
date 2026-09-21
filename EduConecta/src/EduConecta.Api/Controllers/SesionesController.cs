@@ -40,4 +40,12 @@ public class SesionesController : ControllerBase
         var sesion = await _sesionService.CompletarSesionAsync(id);
         return Ok(sesion);
     }
+
+    // GET /api/sesiones/todas
+    [HttpGet("todas")]
+    public async Task<IActionResult> ListarTodas()
+    {
+    var sesiones = await _sesionService.ListarTodasAsync();
+    return Ok(sesiones);
+    }
 }
