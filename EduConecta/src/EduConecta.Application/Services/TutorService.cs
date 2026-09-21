@@ -29,6 +29,16 @@ public class TutorService
         return await _context.Tutores.Find(filtro).ToListAsync();
     }
 
+    
+    //Listar todos los tutores de forma asincrona
+    public async Task<List<Tutor>> ListarTodosAsync()
+    {
+        
+    return await _context.Tutores.Find(=> true).ToListAsync();
+
+    }
+
+
     // Eliminar un tutor (valida que no tenga sesiones futuras)
     public async Task EliminarTutorAsync(string tutorId)
     {
