@@ -1,5 +1,6 @@
 using EduConecta.Domain.Entities;
 using EduConecta.Infrastructure.Persistence;
+using MongoDB.Driver;
 
 namespace EduConecta.Application.Services;
 
@@ -18,8 +19,9 @@ public class EstudianteService
         return estudiante;
     }
 
+    // Listar todos los estudiantes
     public async Task<List<Estudiante>> ListarTodosAsync()
     {
-    return await _context.Estudiantes.Find(_ => true).ToListAsync();
+        return await _context.Estudiantes.Find(x => true).ToListAsync();
     }
 }
