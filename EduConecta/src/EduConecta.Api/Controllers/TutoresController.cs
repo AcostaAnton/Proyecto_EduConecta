@@ -23,6 +23,14 @@ public class TutoresController : ControllerBase
         return CreatedAtAction(nameof(BuscarPorMateria), new { materia = creado.Materias.FirstOrDefault() }, creado);
     }
 
+    // GET /api/tutores/todos
+    [HttpGet("todos")]
+    public async Task<IActionResult> ListarTodos()
+    {
+    var tutores = await _tutorService.ListarTodosAsync();
+    return Ok(tutores);
+    }
+
     // GET /api/tutores?materia=Matematicas
     [HttpGet]
     public async Task<IActionResult> BuscarPorMateria([FromQuery] string materia)
