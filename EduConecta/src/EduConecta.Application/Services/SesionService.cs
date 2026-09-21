@@ -69,4 +69,8 @@ public class SesionService
     {
         return await _context.Sesiones.Find(s => s.EstudianteId == estudianteId).ToListAsync();
     }
+    public async Task<List<SesionTutoria>> ListarTodasAsync()
+    {
+    return await _context.Sesiones.Find(_ => true).ToListAsync();
+    }
 }

@@ -17,4 +17,9 @@ public class EstudianteService
         await _context.Estudiantes.InsertOneAsync(estudiante);
         return estudiante;
     }
+
+    public async Task<List<Estudiante>> ListarTodosAsync()
+    {
+    return await _context.Estudiantes.Find(_ => true).ToListAsync();
+    }
 }

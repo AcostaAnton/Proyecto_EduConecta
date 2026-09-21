@@ -32,4 +32,12 @@ public class EstudiantesController : ControllerBase
         var sesiones = await _sesionService.ListarPorEstudianteAsync(id);
         return Ok(sesiones);
     }
+
+    // GET /api/estudiantes/todos
+    [HttpGet("todos")]
+    public async Task<IActionResult> ListarTodos()
+    {
+    var estudiantes = await _estudianteService.ListarTodosAsync();
+    return Ok(estudiantes);
+    }
 }
